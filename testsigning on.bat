@@ -24,10 +24,11 @@ if '%errorlevel%' NEQ '0' (
 echo Testsigning by: Henry Nguyen
 echo :-------------------------------------
 :PROMPT
-SET /P AREYOUSURE=Do you wish to enable Testsigning (Y/[N])?
-IF "%AREYOUSURE%"== "Y" GOTO execute
-IF "%AREYOUSURE%"== "y" GOTO execute
-if not %AREYOUSURE%== Y GOTO executeNo
+SET /P choice=Do you wish to enable Testsigning (Y/N)?
+IF /I "%choice%"== "Y" GOTO yes
+IF /I "%choice%"== "N" GOTO no
+if not '%choice%'==''
+ECHO "%choice%" is not valid, try again
 
 : execute
 Bcdedit.exe -set TESTSIGNING ON
