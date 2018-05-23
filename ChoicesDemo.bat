@@ -9,11 +9,14 @@ if not '%choice%'==''
 ECHO "%choice%" is not valid, try again
 ECHO.
 goto start
+
 :hello
 ECHO HELLO
 goto end
+
 :bye
 ECHO BYE
 goto end
+
 :end
 pause
