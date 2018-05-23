@@ -24,17 +24,24 @@ if '%errorlevel%' NEQ '0' (
 :PROMPT
 SET /P choice=Win7 = 1, nothing = 2: 
 IF /I "%choice%"== "1" GOTO Win7
-IF /I "%choice%"== "2" GOTO nothing
+IF /I "%choice%"== "2" GOTO exit
 if not '%choice%'==''
 ECHO "%choice%" is not valid, try again
 
 :Win7
 start cmd /k Bcdboot E:\Windows
-goto no
+goto exit
 
-:nothing
-start 
-goto no
+:exit
+SET /P choice=Do you wish to restart (Y/N)?
+IF /I "%choice%"== "Y" GOTO execute
+IF /I "%choice%"== "N" GOTO no
+if not '%choice%'==''
+ECHO "%choice%" is not valid, try again
 
-:no
+: execute
+shutdown /r /c "Restarting computer to apply changes"
+goto END
+
+:NO
 exit
