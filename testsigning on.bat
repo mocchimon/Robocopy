@@ -30,11 +30,11 @@ IF /I "%choice%"== "N" GOTO no
 if not '%choice%'==''
 ECHO "%choice%" is not valid, try again
 
-: execute
+:yes
 Bcdedit.exe -set TESTSIGNING ON
 goto END
 
-: executeNO
+:no
 Bcdedit.exe -set TESTSIGNING OFF
 goto END
 
