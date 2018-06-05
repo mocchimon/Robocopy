@@ -44,9 +44,9 @@ if not defined copyconfig SET copyconfig=f
 call orbis-ctrl.exe add %PS4ip%
 call orbis-ctrl.exe connect %PS4ip%
 call orbis-ctrl.exe map O
-call robocopy "\\eac.ad.ea.com\sports\drebuilds\fifafb\fifafb\Builds\QA\PS4\316086\PS4-DEV_All-Release\eBuild" "O:\%PS4ip%\data\app" *.* /xf *.bin /MIR /R:10 /W:10 /XO /XN
-if "%copyconfig%" == "r" ren "Q:\%PS4ip%\data\app\FIFAGame.Main_Ps4_release.elf" "eboot.bin"
-if "%copyconfig%" == "f" ren "O:\%PS4ip%\data\app\FIFAGame.Main_Ps4_final.elf" "eboot.bin"
+call robocopy "<eBuild>" "<console\app>" *.* /xf *.bin /MIR /R:10 /W:10 /XO /XN
+if "%copyconfig%" == "r" ren "<console>" "eboot.bin"
+if "%copyconfig%" == "f" ren "<console>" "eboot.bin"
 goto :end
  
 :end
