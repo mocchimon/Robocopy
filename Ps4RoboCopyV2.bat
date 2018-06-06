@@ -45,8 +45,8 @@ call orbis-ctrl.exe add %PS4ip%
 call orbis-ctrl.exe connect %PS4ip%
 call orbis-ctrl.exe map O
 call robocopy "%source%" "%destination%" /copy:DAT /E /W:2 /R:0 /MT:8
-if "%copyconfig%" == "r" copy "Q:\%PS4ip%\data\app\FIFAGame.Main_Ps4_release.elf" "eboot.bin"
-if "%copyconfig%" == "f" copy "O:\%PS4ip%\data\app\FIFAGame.Main_Ps4_final.elf" "eboot.bin"
+if "%copyconfig%" == "r" copy "Q:\%PS4ip%\data\app\Game.Main_Ps4_release.elf" "eboot.bin"
+if "%copyconfig%" == "f" copy "O:\%PS4ip%\data\app\Game.Main_Ps4_final.elf" "eboot.bin"
 goto :end
  
 :end
