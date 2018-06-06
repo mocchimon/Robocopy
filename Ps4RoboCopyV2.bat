@@ -9,7 +9,7 @@ echo.
  
   
 :start
-echo Do you want to copy this FIFA Ebuild to your Playstation 4 Hard Drive?
+echo Do you want to copy this Ebuild to your Playstation 4 Hard Drive?
 SET /P copytokit=(y = yes; n = no; ENTER = yes):
 if not defined copytokit SET copytokit=y
 if "%copytokit%" == "y" goto :ThePS4ip
