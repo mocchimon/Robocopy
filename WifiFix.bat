@@ -14,11 +14,11 @@ ECHO "%choice%" is not valid, try again
 GOTO Prompt
 
 :yes
-START cmd.exe /k "netsh wlan set autoconfig enabled=yes interface="Wireless Network Connection" "
+START cmd.exe /k "netsh wlan set autoconfig enabled=yes interface="Wireless Network Connection""
 goto END
 
 :no
-START cmd.exe /k "netsh wlan set autoconfig enabled=no interface="Wireless Network Connection" 
+START cmd.exe /k "netsh wlan set autoconfig enabled=no interface="Wireless Network Connection"" 
 goto END
 
 :END
